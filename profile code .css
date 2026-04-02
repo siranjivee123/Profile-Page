@@ -1,0 +1,63 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    margin: 5px 0;
+    padding: 8px;
+}
+
+button {
+    background: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
