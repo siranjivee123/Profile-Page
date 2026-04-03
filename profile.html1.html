@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Profile Form</title>
     <link rel="stylesheet" href="profile.css1.css">
+    <script src="profile.js" defer></script>
 </head>
 <body>
+  <nav class="navbar">
+  <div class="logo">MyProfile</div>
+  <div class="menu-toggle">☰</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+</nav>
 <header>
     <h1>My Profile Page</h1>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
 </header>
 <main>
     <section>
+      <section id="about">
+      <section id="details">
+      <section id="register">
         <h2>About Me</h2>
         <img src="profile.jpeg" alt="Profile Image">
         <p><strong>Hello! I am learning web development.</strong></p>
     </section>
     <section>
         <h2>My Details</h2>
-       <table>
-    <tr>
-        <th>Field</th>
-        <th>Info</th>
-    </tr>
-    <tr>
-        <td>Name</td>
-        <td>Siranjivee</td>
-    </tr>
-    <tr>
-        <td>Age</td>
-        <td>22</td>
-    </tr>
-    <tr>
-        <td>Country</td>
-        <td>India</td>
-    </tr>
-    <tr>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Info</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><b>Siranjivee</b></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><b>22</b></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><b>India</b></td>
+            </tr>
+             <tr>
         <td>Email</td>
-        <td>siranjivee@email.com</td>
+        <td><b>siranjivee@email.com</b></td>
     </tr>
     <tr>
         <td>Phone</td>
-        <td>+91 9988776655 </td>
+        <td><b>+91 9988776655</b></td>
     </tr>
     <tr>
         <td>Skills</td>
-        <td>HTML, CSS, JavaScript</td>
+        <td><b>HTML, CSS, JavaScript</b></td>
     </tr>
     <tr>
         <td>Education</td>
-        <td>B.Tech Computer Science</td>
+        <td><b>B.Tech Computer Science </b></td>
     </tr>
     <tr>
-        <td>Hobby</td>
-        <td>Reading, Coding</td>
+        <td>Hobbies</td>
+        <td><b>Reading, Coding,Playing</b></td>
     </tr>
-</table>
+  </table>
     </section>
     <section>
         <h2>Register</h2>
@@ -63,10 +76,8 @@
                 <legend>Personal Info</legend>         
                 <label>Name:</label>
                 <input type="text" required>
-
                 <label>Email:</label>
                 <input type="email" required>
-
                 <label>Password:</label>
                 <input type="password" required>
             </fieldset>
@@ -93,8 +104,75 @@
                 </select>
             </fieldset>
             <button type="submit">Submit</button>
-        </form>
+        </form>   
     </section>
 </main>
+<script>
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+/* Dynamic Greeting */
+const toggleBtn = document.getElementById("darkModeToggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+const greeting = document.createElement("h3");
+let hour = new Date().getHours();
+if (hour < 12) {
+  greeting.innerText = "Good Morning ☀️";
+} else if (hour < 17) {
+  greeting.innerText = "Good Afternoon 🌤️";
+} else {
+  greeting.innerText = "Good Evening 🌙";
+}
+greeting.style.textAlign = "center";
+document.querySelector("header").appendChild(greeting);
+/* Section Fade-in */
+const sections = document.querySelectorAll("section");
+sections.forEach((sec, index) => {
+  sec.style.opacity = "0";
+  sec.style.transform = "translateY(50px)";
+  setTimeout(() => {
+    sec.style.transition = "all 0.6s ease";
+    sec.style.opacity = "1";
+    sec.style.transform = "translateY(0)";
+  }, index * 200);
+});
+/* Validation */
+document.querySelector("form").addEventListener("submit", function(e) {
+  const name = document.querySelector('input[name="name"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  if (name === "" || email === "") {
+    alert("Please fill all required fields!");
+    e.preventDefault();
+  } else {
+    alert("Form submitted successfully 🎉");
+  }
+});
+/* Image Zoom Effect */
+const profileImg = document.querySelector("img");
+profileImg.addEventListener("click", () => {
+  if (profileImg.style.transform === "scale(1.5)") {
+    profileImg.style.transform = "scale(1)";
+  } else {
+    profileImg.style.transform = "scale(1.5)";
+  }
+});
+/* Button Click Animation */
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  button.style.transform = "scale(0.9)";
+  setTimeout(() => { 
+    button.style.transform = "scale(1)";
+  }, 150);
+});
+
+</script>
+<footer>
+  <p>© 2026 Siranjivee | All Rights Reserved.</p>
+  <p>#03/04/2026</p>
+</footer>
 </body>
 </html>
