@@ -2,8 +2,6 @@ const toggleBtn = document.getElementById("darkModeToggle");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
-
-
 //  Form Validation :
 document.querySelector("form").addEventListener("submit", function(e) {
   const name = document.querySelector('input[name="name"]').value;
@@ -16,8 +14,6 @@ document.querySelector("form").addEventListener("submit", function(e) {
   }
 });
 
-
-//  Image Zoom :
 const img = document.querySelector("img");
 img.addEventListener("click", () => {
     img.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
