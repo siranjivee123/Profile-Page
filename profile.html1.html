@@ -17,7 +17,7 @@
 </nav>
 <header>
     <h1>My Profile Page</h1>
-    <button id="darkModeToggle">🌙 Dark Mode</button>
+    <button id="darkModeToggle"> Dark Mode</button>
 </header>
 <main>
     <section>
@@ -121,11 +121,11 @@ toggleBtn.addEventListener("click", () => {
 const greeting = document.createElement("h3");
 let hour = new Date().getHours();
 if (hour < 12) {
-  greeting.innerText = "Good Morning ☀️";
+  greeting.innerText = "Good Morning ";
 } else if (hour < 17) {
-  greeting.innerText = "Good Afternoon 🌤️";
+  greeting.innerText = "Good Afternoon ";
 } else {
-  greeting.innerText = "Good Evening 🌙";
+  greeting.innerText = "Good Evening ";
 }
 greeting.style.textAlign = "center";
 document.querySelector("header").appendChild(greeting);
@@ -148,7 +148,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
     alert("Please fill all required fields!");
     e.preventDefault();
   } else {
-    alert("Form submitted successfully 🎉");
+    alert("Form submitted successfully ");
   }
 });
 /* Image Zoom Effect */
