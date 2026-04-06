@@ -113,7 +113,7 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
-/* Dynamic Greeting */
+/* Greeting */
 const toggleBtn = document.getElementById("darkModeToggle");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
@@ -151,7 +151,6 @@ document.querySelector("form").addEventListener("submit", function(e) {
     alert("Form submitted successfully ");
   }
 });
-/* Image Zoom Effect */
 const profileImg = document.querySelector("img");
 profileImg.addEventListener("click", () => {
   if (profileImg.style.transform === "scale(1.5)") {
@@ -160,7 +159,6 @@ profileImg.addEventListener("click", () => {
     profileImg.style.transform = "scale(1.5)";
   }
 });
-/* Button Click Animation */
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
   button.style.transform = "scale(0.9)";
@@ -168,7 +166,6 @@ button.addEventListener("click", () => {
     button.style.transform = "scale(1)";
   }, 150);
 });
-
 </script>
 <footer>
   <p>© 2026 Siranjivee | All Rights Reserved.</p>
